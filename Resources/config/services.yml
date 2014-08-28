@@ -3,16 +3,16 @@ parameters:
 
 services:
     netgen_search_and_filter.location_75:
-        class: Netgen\SearchAndFilterBundle\Components\SearchAdapter
-        arguments:
-            - @netgen_search_and_filter.handler.legacy
-            - @netgen_hybrid_approach.form_type.filter_search_form_type
-            - @form.factory
-            - @netgen_search_and_filter.criteria_builder.legacy_basic_search
-            - @netgen_search_and_filter.result_converter.legacy
-            - NetgenHybridApproachBundle:Default:filter_results.html.twig
-            - NetgenHybridApproachBundle:forms:form.html.twig
-            - %netgen_search_and_filter.page_limit%
+            class: Netgen\SearchAndFilterBundle\Components\SearchAdapter
+            arguments:
+                - @netgen_hybrid_approach.handler.legacy
+                - @netgen_hybrid_approach.form_type.filter_search_form_type
+                - @form.factory
+                - @netgen_hybrid_approach.criteria_builder.legacy_list_filter
+                - @netgen_hybrid_approach.result_converter.legacy
+                - NetgenHybridApproachBundle:Default:filter_results.html.twig
+                - NetgenHybridApproachBundle:forms:form.html.twig
+                - 10
 
     netgen_hybrid_approach.handler.legacy:
         class: Netgen\HybridApproachBundle\Components\SearchHandler\LegacyListHandler
