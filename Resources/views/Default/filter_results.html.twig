@@ -1,4 +1,4 @@
-{% extends pagelayout %}
+{% extends pagelayout is defined ? pageLayout : "eZDemoBundle::pagelayout.html.twig"  %}
 
 {% block content %}
 
