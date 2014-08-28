@@ -43,6 +43,13 @@ class FilterSearchType extends AbstractType
      */
     public function buildForm( FormBuilderInterface $builder, array $options )
     {
-
+        $builder->add( 'price', 'choice', array(
+            'label' => 'Filter by price:',
+            'empty_value' => 'Choose an option',
+            'choices' => array( '20' => '<20',
+                    '40' => '<40',
+                    '60' => '<60')
+            ))
+            ->add('save', 'submit', array('label' => 'Filter!'));
     }
 }

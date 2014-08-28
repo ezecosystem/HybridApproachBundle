@@ -4,7 +4,7 @@
 
     <h1>{{ ez_render_field( content, 'name' ) }}</h1>
 
-
+    {% include form_template with { form: form, form_action: path( "ez_urlalias", { locationId: location.id } )} %}
 
         <section class="content-view-full">
             <div class="class-folder row">
