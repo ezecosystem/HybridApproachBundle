@@ -4,29 +4,8 @@
 
     <h1>{{ ez_render_field( content, 'name' ) }}</h1>
 
-    {% include form_template with { form: form, form_action: path( "ez_urlalias", { locationId: location.id } )} %}
 
-    {% if show_results  %}
-        <h2>{{ 'Search results'|trans }}</h2>
 
-        <p>{{ 'Found:'|trans }} {{ pager.getNbResults() }}</p>
-
-        <ul>
-            {% for hit in pager %}
-                <li>{{ render( controller( "ez_content:viewLocation", {"locationId": hit.valueObject.contentInfo.mainLocationId, "viewType": "line"} ) ) }}</li>
-            {% endfor %}
-        </ul>
-
-        {% if pager.haveToPaginate() %}
-            <div class="pagerfanta">
-                {{ pagerfanta( pager, 'twitter_bootstrap_translated', {
-                'routeName': 'ez_urlalias',
-                'routeParams': query_string|merge({'locationId': content.contentInfo.mainLocationId})
-                } )
-                }}
-            </div>
-        {% endif %}
-    {% else %}
         <section class="content-view-full">
             <div class="class-folder row">
             <div class="span8">
@@ -35,6 +14,6 @@
                 </section>
             </div>
         </div>
-    {% endif %}
+
 
 {% endblock %}

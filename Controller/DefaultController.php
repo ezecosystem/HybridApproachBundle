@@ -13,14 +13,7 @@ class DefaultController extends Controller
 {
     public function getCreditsAction( )
     {
-        $htmlpdfapi = $this->container->get( 'netgen_html_pdf_api' );//
 
-        $credits = $htmlpdfapi->getCredits();//
-
-        $response = new Response();
-        $response->setContent($credits->getBody(true));
-
-        return $response;
     }
 
     public function getChildrenAction($locationId)

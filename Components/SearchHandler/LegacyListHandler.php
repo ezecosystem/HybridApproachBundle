@@ -33,20 +33,9 @@ class LegacyListHandler implements SearchHandler {
 
         $criteria = $searchCriteriaBuilder->build($form, $offset, $length, $params);
 
-        $legacyKernelClosure = $this->kernel;
 
-        $searchResults = $legacyKernelClosure()->runCallback(
-            function () use ( $criteria )
-            {
-                return eZFunctionHandler::execute(
-                    'content',
-                    'list',
-                    $criteria
-                );
-            }
-        );
 
-        return $resultConverter->convert( $searchResults );
+        //return $resultConverter->convert( $searchResults );
     }
 
 
@@ -58,19 +47,8 @@ class LegacyListHandler implements SearchHandler {
 
         $criteria = $searchCriteriaBuilder->build($form, 0, 0, $params );
 
-        $legacyKernelClosure = $this->kernel;
 
-        $searchResults = $legacyKernelClosure()->runCallback(
-            function () use ( $criteria )
-            {
-                return eZFunctionHandler::execute(
-                    'content',
-                    'list',
-                    $criteria
-                );
-            }
-        );
 
-        return sizeof($searchResults);
+        //return sizeof($searchResults);
     }
 }
