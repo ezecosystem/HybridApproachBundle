@@ -12,7 +12,7 @@ services:
                 - @netgen_hybrid_approach.result_converter.legacy
                 - NetgenHybridApproachBundle:Default:filter_results.html.twig
                 - NetgenHybridApproachBundle:forms:embedded_form.html.twig
-                - %netgen_search_and_filter.page_limit%
+                - 10
 
     netgen_hybrid_approach.handler.legacy:
             class: Netgen\HybridApproachBundle\Components\SearchHandler\LegacyListHandler

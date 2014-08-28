@@ -11,11 +11,6 @@ use Pagerfanta\Pagerfanta;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
-    {
-        return $this->render('NetgenHybridApproachBundle:Default:index.html.twig', array('name' => $name));
-    }
-
     public function getCreditsAction( )
     {
         $htmlpdfapi = $this->container->get( 'netgen_html_pdf_api' );//
