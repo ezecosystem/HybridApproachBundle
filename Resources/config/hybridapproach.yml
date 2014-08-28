@@ -1,0 +1,9 @@
+ezpublish:
+    system:
+        ezdemo_site_group:
+            location_view:
+                full:
+                    netgen_search_and_filter_set:
+                        controller: NetgenSearchAndFilterBundle:Search:searchLocation
+                        match:
+                            Id\Location: 75

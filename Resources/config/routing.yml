@@ -1,0 +1,12 @@
+netgen_hybrid_approach_homepage:
+    path:     /hello2/{name}
+    defaults: { _controller: NetgenHybridApproachBundle:Default:index }
+
+    path:   /pdf/print
+    defaults: { _controller: NetgenHybridApproachBundle:Default:pdf }
+
+netgen_filter:
+    path:   /content/view/full/{locationId}
+    defaults: { _controller: NetgenSearchAndFilterBundle:Search:searchLocation }
+    requirements:
+        locationId: "75"

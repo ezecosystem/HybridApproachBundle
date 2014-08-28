@@ -1,0 +1,3 @@
+{% for childLocation in children.locations %}
+    {{ render( controller( "ez_content:viewLocation", {"locationId": childLocation.id, "viewType": "line"} ) ) }}
+{% endfor %}
