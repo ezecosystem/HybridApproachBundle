@@ -4,6 +4,6 @@ ezpublish:
             location_view:
                 full:
                     netgen_search_and_filter_set:
-                        template: NetgenHybridApproachBundle:Default:filter_results.html.twig
+                        controller: NetgenSearchAndFilterBundle:Search:searchLocation
                         match:
                             Id\Location: 75
