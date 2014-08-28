@@ -1,0 +1,9 @@
+ezpublish:
+    system:
+        ezdemo_site_group:
+            location_view:
+                full:
+                    netgen_search_and_filter_set:
+                        template: NetgenHybridApproachBundle:Default:filter_results.html.twig
+                        match:
+                            Id\Location: 75
