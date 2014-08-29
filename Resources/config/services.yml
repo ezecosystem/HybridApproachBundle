@@ -2,7 +2,7 @@ parameters:
 #    netgen_hybrid_approach.example.class: Netgen\HybridApproachBundle\Example
 
 services:
-    netgen_search_filter.location_75:
+    netgen_search_and_filter.location_75:
         class: Netgen\SearchAndFilterBundle\Components\SearchAdapter
         arguments:
             - @netgen_search_and_filter.handler.legacy
