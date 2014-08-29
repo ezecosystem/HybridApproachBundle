@@ -24,15 +24,6 @@
             </div>
         </section>
 
-        {% if pager.haveToPaginate() %}
-            <div class="pagerfanta">
-                {{ pagerfanta( pager, 'twitter_bootstrap_translated', {
-                'routeName': 'ez_urlalias',
-                'routeParams': query_string|merge({'locationId': content.contentInfo.mainLocationId})
-                } )
-                }}
-            </div>
-        {% endif %}
     {% else %}
         <section class="content-view-full">
             <div class="class-folder row">
