@@ -10,13 +10,18 @@
         <h2>{{ 'Search results'|trans }}</h2>
 
         <p>{{ 'Found:'|trans }} {{ pager.getNbResults() }}</p>
-
-        <ul>
-            {% for hit in pager %}
-                <li>{{ render( controller( "ez_content:viewLocation", {"locationId": hit.valueObject.contentInfo.mainLocationId, "viewType": "line"} )
-                    ) }}</li>
-            {% endfor %}
-        </ul>
+        <section class="content-view-full">
+            <div class="class-folder row">
+                <div class="span8">
+                    <section class="content-view-children">
+                    {% for hit in pager %}
+                        {{ render( controller( "ez_content:viewLocation", {"locationId": hit.valueObject.contentInfo.mainLocationId, "viewType": "line"} )
+                            ) }}
+                    {% endfor %}
+                    </section>
+                </div>
+            </div>
+        </section>
 
         {% if pager.haveToPaginate() %}
             <div class="pagerfanta">
@@ -30,12 +35,13 @@
     {% else %}
         <section class="content-view-full">
             <div class="class-folder row">
-            <div class="span8">
-                <section class="content-view-children">
-                    {{ render(controller('NetgenHybridApproachBundle:Default:getChildren', {'locationId': location.id})) }}
-                </section>
+                <div class="span8">
+                    <section class="content-view-children">
+                        {{ render(controller('NetgenHybridApproachBundle:Default:getChildren', {'locationId': location.id})) }}
+                    </section>
+                </div>
             </div>
-        </div>
+        </section>
     {% endif %}
 
 
